@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import MoviesContainer from "./MoviesContainer.js";
-import GenresContainer from "./GenresContainer.js";
-import MovieReview from "./MovieReview.js";
+import MoviesContainer from "./MoviesContainer/MoviesContainer.js";
+import GenresContainer from "./GenresContainer/GenresContainer.js";
+import MovieReview from "./MovieReview/MovieReview.js";
 
 function MainContainer({ comments, setComments, handleDeleteComment }) {
   const [genresArray, setGenresArray] = useState([]);
@@ -69,12 +69,11 @@ function MainContainer({ comments, setComments, handleDeleteComment }) {
         genre={genre}
       />
       <MovieReview
-          moviesArray={moviesArray}
-          comments={comments}
-          movieId={movieId}
-          handleUpdateComments={handleUpdateComments}
-          handleDeleteComment={handleDeleteComment}
-       
+        moviesArray={moviesArray}
+        comments={comments}
+        movieId={movieId}
+        handleUpdateComments={handleUpdateComments}
+        handleDeleteComment={handleDeleteComment}
       />
     </main>
   );

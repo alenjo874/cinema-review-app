@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import CommentCard from "./CommentCard.js";
+import CommentCard from "../CommentCard";
 import { v4 as uuidv4 } from "uuid";
 
 function ProfileContainer({ comments, handleDeleteComment }) {

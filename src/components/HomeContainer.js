@@ -14,7 +14,11 @@ function HomeContainer() {
   }, []);
 
   const filterTitles = moviesArray.filter((movie) =>
-    movie.title.toLowerCase().includes(search.toLowerCase())
+    movie.title.toLowerCase().includes(search.toLowerCase()) ||
+    movie.genres.toLowerCase().includes(search.toLowerCase()) ||
+    movie.director.toLowerCase().includes(search.toLowerCase()) ||
+    movie.actors.toLowerCase().includes(search.toLowerCase()) 
+
   );
 
   const displayTitles = filterTitles.map((movie) => {
@@ -40,6 +44,7 @@ function HomeContainer() {
           placeholder="search movie by title"
           className="search text-center"
         ></input>
+        <button className="btn-style">+Add Movie</button>
       </motion.form>
       <motion.div
         className="home-movie-container"

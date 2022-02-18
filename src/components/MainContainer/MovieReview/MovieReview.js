@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import CommentCard from "./CommentCard";
+import CommentCard from "../../CommentCard";
 
 function MovieReview({
   handleUpdateComments,
@@ -74,7 +74,7 @@ function MovieReview({
           onChange={(e) => setReviewFormInput(e.target.value)}
           placeholder="Let us know what you"
         ></textarea>
-        <button className="comment-btn">Submit!</button>
+        <button className="btn-style">Submit!</button>
       </form>
       {/* <p>{reviewFormInput}</p> */}
     </div>
