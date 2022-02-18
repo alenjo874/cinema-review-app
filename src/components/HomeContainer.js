@@ -5,16 +5,15 @@ import { motion } from "framer-motion";
 import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
 
-function HomeContainer({ handleHomeClick, setNewMovieObj }) {
-  const [moviesArray, setMoviesArray] = useState([]);
+function HomeContainer({
+  handleHomeClick,
+  setNewMovieObj,
+  setMoviesArray,
+  moviesArray,
+}) {
+  const [homeMoviesArray, setHomeMoviesArray] = useState([]);
   const [search, setSearch] = useState("");
   const [isAddClicked, setIsAddClicked] = useState(false);
-
-  useEffect(() => {
-    fetch("http://localhost:3000/movies")
-      .then((resp) => resp.json())
-      .then(setMoviesArray);
-  }, []);
 
   const filterTitles = moviesArray.filter((movie) => {
     return (
@@ -103,7 +102,7 @@ function HomeContainer({ handleHomeClick, setNewMovieObj }) {
         ></input>
         <div>
           <button className="btn-style" type="submit">
-            New Movie
+            +New Movie
           </button>
         </div>
       </div>
@@ -150,7 +149,7 @@ function HomeContainer({ handleHomeClick, setNewMovieObj }) {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log("Success:", data);
+        setMoviesArray((prev) => [...prev, data]);
       });
     setTitle("");
     setYear("");
@@ -162,6 +161,18 @@ function HomeContainer({ handleHomeClick, setNewMovieObj }) {
     setPosterUrl("");
     setIsAddClicked(false);
   }
+
+  const showFormBtn = (
+    <button className="btn-style" onClick={handleClick}>
+      +Add Movie
+    </button>
+  );
+
+  const hideFormBtn = (
+    <button className="btn-style" onClick={handleClick}>
+      Show Less
+    </button>
+  );
 
   return (
     <div className="home-container">
@@ -179,10 +190,7 @@ function HomeContainer({ handleHomeClick, setNewMovieObj }) {
           className="search text-center"
         ></input>
       </motion.form>
-
-      <button className="btn-style" onClick={handleClick}>
-        +Add Movie
-      </button>
+      {isAddClicked ? hideFormBtn : showFormBtn}
       {isAddClicked ? newMovieForm : null}
       {isAddClicked ? null : movieCardDisplay}
     </div>

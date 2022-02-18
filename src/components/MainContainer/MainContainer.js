@@ -7,11 +7,13 @@ function MainContainer({
   comments,
   setComments,
   handleDeleteComment,
+  moviesArray
+  
 
 }) {
   const [genresArray, setGenresArray] = useState([]);
   const [genre, setGenre] = useState("");
-  const [moviesArray, setMoviesArray] = useState([]);
+
   const [searchDisplay, setSearchDisplay] = useState(false);
 
   const [isGenreClicked, setIsGenreClicked] = useState(false);
@@ -27,11 +29,6 @@ function MainContainer({
       .then(setGenresArray);
   }, []);
 
-  useEffect(() => {
-    fetch("http://localhost:3000/movies")
-      .then((resp) => resp.json())
-      .then(setMoviesArray);
-  }, []);
 
   function onClickDisplayMovies(specificGenre) {
     setGenre(specificGenre);
