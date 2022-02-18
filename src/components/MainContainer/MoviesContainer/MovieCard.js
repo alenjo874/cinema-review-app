@@ -18,13 +18,13 @@ function MovieCard({
         <img src={posterUrl} alt="" className="review-img"></img>
       </div>
       <div className="review-info-container">
-        <p className="review-infro-element">
+        <p className="review-info-element">
           {genres.join(" ")} {year}
         </p>
-        <p className="review-infro-element">Director: {director}</p>
-        <p className="review-infro-element">Actors: {actors}</p>
-        <p className="review-infro-element">Runtime: {runtime} minutes</p>
-        <p className="review-infro-element">{plot}</p>
+        <p className="review-info-element">Director: {director}</p>
+        <p className="review-info-element">Actors: {actors}</p>
+        <p className="review-info-element">Runtime: {runtime} minutes</p>
+        <p className="review-info-element">{plot}</p>
       </div>
     </div>
   );

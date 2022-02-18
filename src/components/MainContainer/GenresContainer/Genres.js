@@ -31,10 +31,12 @@ function Genres({ title, movieId, onClickDisplayMovies, handleSearchDisplay }) {
           scale: 1.25,
           originX: 0,
           transition: { duration: 0.3 },
+          color: "white",
         }}
         whileTap={{
           scale: 0.9,
           transition: { duration: 0.3 },
+          color: "darkgray",
         }}
         transition={{ type: "spring", stiffness: 275 }}
         className="genre-element"
