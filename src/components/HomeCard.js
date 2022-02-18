@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-function HomeCard({ posterUrl, plot, title, year, genres }) {
+function HomeCard({ posterUrl, title, director, actor, year, genres }) {
   const [showMore, setShowMore] = useState(false);
   const [plotDisplay, setPlotDisplay] = useState(true);
 
@@ -17,29 +17,6 @@ function HomeCard({ posterUrl, plot, title, year, genres }) {
   function handlePlot() {
     setPlotDisplay((prev) => !prev);
   }
-
-  const movieImage = (
-    <img
-      onClick={handlePlot}
-      onMouseLeave={hideShowMore}
-      onMouseEnter={displayShowMore}
-      className="img-home"
-      src={posterUrl}
-      alt=""
-      onError={(event) => (event.target.style.display = "none")}
-    />
-  );
-
-  const moviePlot = (
-    <div
-      onClick={handlePlot}
-      onMouseLeave={hideShowMore}
-      className="img-home-overlay"
-    >
-      <h4>{title}</h4>
-      <p> {plot}</p>
-    </div>
-  );
 
   function handleImageError(event) {
     event.target.style.display = "none";
@@ -74,6 +51,8 @@ function HomeCard({ posterUrl, plot, title, year, genres }) {
       <div className="image__overlay image__overlay--blur">
         <h4 className="image__title">{title}</h4>
         <p className="image__description">{year}</p>
+        <p className="image__description">Director: {director}</p>
+        <p className="image__description">{actor}</p>
         <p className="image__description">{genreString}</p>
       </div>
     </motion.div>

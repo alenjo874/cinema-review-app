@@ -13,6 +13,7 @@ function MainContainer({ comments, setComments, handleDeleteComment }) {
 
   // const [movieReviewForm, setMovieReviewForm] = useState(true);
   const [movieId, setMovieId] = useState("");
+  const [movieTitle, setMovieTitle] = useState("");
 
   useEffect(() => {
     fetch("http://localhost:3000/genres")
@@ -35,8 +36,10 @@ function MainContainer({ comments, setComments, handleDeleteComment }) {
     movie.genres.includes(genre)
   );
 
-  function handleSearchDisplay() {
+  function handleSearchDisplay(title, movieId) {
     setSearchDisplay(true);
+    setMovieTitle(title);
+    setMovieId(movieId);
   }
 
   function handleInfoDisplay(id) {
@@ -54,26 +57,21 @@ function MainContainer({ comments, setComments, handleDeleteComment }) {
         genresArray={genresArray}
         onClickDisplayMovies={onClickDisplayMovies}
         handleSearchDisplay={handleSearchDisplay}
+        moviesArray={moviesArray}
       />
       <MoviesContainer
-        filteredMovies={filteredMovies}
-        searchDisplay={searchDisplay}
-        comments={comments}
-        setComments={setComments}
-        handleUpdateComments={handleUpdateComments}
-        handleDeleteComment={handleDeleteComment}
-        isGenreClicked={isGenreClicked}
+        movieTitle={movieTitle}
+        movieId={movieId}
         moviesArray={moviesArray}
-        handleInfoDisplay={handleInfoDisplay}
-        // Review Form Integration
-        genre={genre}
+        comments={comments}
+        handleDeleteComment={handleDeleteComment}
       />
       <MovieReview
         moviesArray={moviesArray}
         comments={comments}
         movieId={movieId}
         handleUpdateComments={handleUpdateComments}
-        handleDeleteComment={handleDeleteComment}
+      
       />
     </main>
   );

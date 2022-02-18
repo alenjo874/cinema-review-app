@@ -13,13 +13,14 @@ function HomeContainer() {
       .then(setMoviesArray);
   }, []);
 
-  const filterTitles = moviesArray.filter((movie) =>
-    movie.title.toLowerCase().includes(search.toLowerCase()) ||
-    movie.genres.toLowerCase().includes(search.toLowerCase()) ||
-    movie.director.toLowerCase().includes(search.toLowerCase()) ||
-    movie.actors.toLowerCase().includes(search.toLowerCase()) 
-
-  );
+  const filterTitles = moviesArray.filter((movie) => {
+    return (
+      movie.title.toLowerCase().includes(search.toLowerCase()) ||
+      movie.director.toLowerCase().includes(search.toLowerCase()) ||
+      movie.actors.toLowerCase().includes(search.toLowerCase()) ||
+      movie.genres.join(" ").toLowerCase().includes(search.toLowerCase())
+    );
+  });
 
   const displayTitles = filterTitles.map((movie) => {
     return <HomeCard key={uuidv4()} {...movie} />;
@@ -41,7 +42,7 @@ function HomeContainer() {
           type="text"
           value={search}
           onChange={handleSearch}
-          placeholder="search movie by title"
+          placeholder="Search by Title, Director, Genre"
           className="search text-center"
         ></input>
         <button className="btn-style">+Add Movie</button>

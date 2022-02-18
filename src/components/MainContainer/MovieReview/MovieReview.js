@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { v4 as uuidv4 } from "uuid";
-import CommentCard from "../../CommentCard";
 
 function MovieReview({
   handleUpdateComments,
@@ -35,27 +33,13 @@ function MovieReview({
     });
   }
 
-  const filteredComments = comments.filter(
-    (comment) => comment.movieId === movieId
-  );
-
-  const displayComments = filteredComments.map((comment) => {
-    return (
-      <CommentCard
-        key={uuidv4()}
-        {...comment}
-        handleDeleteComment={handleDeleteComment}
-      />
-    );
-  });
-
   // const filteredMovieObj = moviesArray.filter(movie => movie.title.toLowerCase() === reviewTitleInput.toLowerCase())
   // console.log(filteredMovieObj)
 
   return (
     <div className="comment-container">
-      <h3 className="comment-element">My Little Critque</h3>
       <form onSubmit={handleSubmitReview} className="comment-form">
+        <h3 className="comment-element">Review Form</h3>
         <lable className="comment-element">Title:</lable>
         <input
           className="search comment-element"
@@ -72,7 +56,7 @@ function MovieReview({
           cols="50"
           value={reviewFormInput}
           onChange={(e) => setReviewFormInput(e.target.value)}
-          placeholder="Let us know what you"
+          placeholder="Let us know how you felt!"
         ></textarea>
         <button className="btn-style">Submit!</button>
       </form>
