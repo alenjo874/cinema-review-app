@@ -43,7 +43,7 @@ function MoviesContainer({
         <div className="review-feed-container">
           <h4>Critics Review of {movieTitle}</h4>
           {displayComments}
-          </div>
+        </div>
       </div>
     </div>
   );

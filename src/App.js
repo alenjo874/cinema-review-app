@@ -8,6 +8,8 @@ import HomeContainer from "./components/HomeContainer";
 
 function App() {
   const [comments, setComments] = useState([]);
+  const [homeMovieId, setHomeMovieId] = useState("");
+  const [newMovieObj, setNewMovieObj] = useState({});
 
   useEffect(() => {
     fetch("http://localhost:3000/comments")
@@ -25,19 +27,21 @@ function App() {
     });
   }
 
+
   return (
     <div className="App">
       <NavBar />
       <div className="body-container">
         <Switch>
           <Route exact path="/">
-            <HomeContainer />
+            <HomeContainer setNewMovieObj={setNewMovieObj} />
           </Route>
           <Route exact path="/review">
             <MainContainer
               comments={comments}
               setComments={setComments}
               handleDeleteComment={handleDeleteComment}
+          
             />
           </Route>
           <Route exact path="/profile">

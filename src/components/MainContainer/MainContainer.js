@@ -3,7 +3,12 @@ import MoviesContainer from "./MoviesContainer/MoviesContainer.js";
 import GenresContainer from "./GenresContainer/GenresContainer.js";
 import MovieReview from "./MovieReview/MovieReview.js";
 
-function MainContainer({ comments, setComments, handleDeleteComment }) {
+function MainContainer({
+  comments,
+  setComments,
+  handleDeleteComment,
+
+}) {
   const [genresArray, setGenresArray] = useState([]);
   const [genre, setGenre] = useState("");
   const [moviesArray, setMoviesArray] = useState([]);
@@ -14,6 +19,7 @@ function MainContainer({ comments, setComments, handleDeleteComment }) {
   // const [movieReviewForm, setMovieReviewForm] = useState(true);
   const [movieId, setMovieId] = useState("");
   const [movieTitle, setMovieTitle] = useState("");
+
 
   useEffect(() => {
     fetch("http://localhost:3000/genres")
@@ -65,13 +71,13 @@ function MainContainer({ comments, setComments, handleDeleteComment }) {
         moviesArray={moviesArray}
         comments={comments}
         handleDeleteComment={handleDeleteComment}
+  
       />
       <MovieReview
         moviesArray={moviesArray}
         comments={comments}
         movieId={movieId}
         handleUpdateComments={handleUpdateComments}
-      
       />
     </main>
   );

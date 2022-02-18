@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-function HomeCard({ posterUrl, title, director, actor, year, genres }) {
+function HomeCard({ id, posterUrl, title, director, actor, year, genres }) {
   const [showMore, setShowMore] = useState(false);
   const [plotDisplay, setPlotDisplay] = useState(true);
 
@@ -23,7 +23,7 @@ function HomeCard({ posterUrl, title, director, actor, year, genres }) {
     setPlotDisplay(false);
   }
 
-  const genreString = genres.join(" ");
+  // const genreString = genres.join(" ");
 
   const imgOverlay = (
     <motion.div
@@ -53,7 +53,7 @@ function HomeCard({ posterUrl, title, director, actor, year, genres }) {
         <p className="image__description">{year}</p>
         <p className="image__description">Director: {director}</p>
         <p className="image__description">{actor}</p>
-        <p className="image__description">{genreString}</p>
+        <p className="image__description">{genres}</p>
       </div>
     </motion.div>
   );
