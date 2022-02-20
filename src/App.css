@@ -278,6 +278,10 @@ html {
   margin-right: 50px;
 }
 
+.card-container {
+  width: 700px;
+}
+
 .movie-card {
   display: flex;
   justify-content: space-between;
@@ -392,6 +396,8 @@ li {
   width: 75%;
   height: 200px;
 }
+
+
 
 .comments-container {
   display: flex;
@@ -548,6 +554,11 @@ textarea {
   align-content: flex-end;
 }
 
+.genres-container {
+  overflow: scroll;
+  height: 800px;
+}
+
 @media only screen and (max-width: 600px) {
   .navbar-container {
     height: auto;
@@ -648,6 +659,8 @@ textarea {
     align-items: center;
     justify-content: center;
   }
-
+  .card-container {
+    width: auto;
+  }
 
 }
