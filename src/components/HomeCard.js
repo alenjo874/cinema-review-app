@@ -53,7 +53,7 @@ function HomeCard({ id, posterUrl, title, director, actor, year, genres }) {
         <p className="image__description">{year}</p>
         <p className="image__description">Director: {director}</p>
         <p className="image__description">{actor}</p>
-        <p className="image__description">{genres}</p>
+        <p className="image__description">{genres.join(" ")}</p>
       </div>
     </motion.div>
   );

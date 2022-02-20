@@ -186,7 +186,7 @@ function HomeContainer({
           type="text"
           value={search}
           onChange={handleSearch}
-          placeholder="Search by Title, Director, Genre"
+          placeholder="Search by Movie Title, Director, Genre"
           className="search text-center"
         ></input>
       </motion.form>

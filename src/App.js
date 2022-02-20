@@ -1,6 +1,7 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
 import NavBar from "./components/NavBar.js";
+import Footer from "./components/FooterContainer/Footer"
 import ProfileContainer from "./components/MainContainer/ProfileContainer";
 import { Routes, Route, Link, Switch } from "react-router-dom";
 import MainContainer from "./components/MainContainer/MainContainer";
@@ -62,6 +63,7 @@ function App() {
             />
           </Route>
         </Switch>
+        <Footer />
       </div>
     </div>
   );

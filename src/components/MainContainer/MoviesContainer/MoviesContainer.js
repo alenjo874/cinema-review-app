@@ -41,7 +41,6 @@ function MoviesContainer({
       <div className="card-review-container">
         <div className="card-container"> {displayMovieCard}</div>
         <div className="review-feed-container">
-          <h4>Critics Review of {movieTitle}</h4>
           {displayComments}
         </div>
       </div>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import CommentCard from "../CommentCard";
 import { v4 as uuidv4 } from "uuid";
+import dogcritic from "../MainContainer/images/dogcritic.jpeg"
 
 function ProfileContainer({ comments, handleDeleteComment }) {
   const commentList = comments.map((comment) => (
@@ -16,12 +17,11 @@ function ProfileContainer({ comments, handleDeleteComment }) {
       <div className="profile-information">
         {/* User Information */}
         <div className="profile-details">
-          <h2>Dr. Woof</h2>
-          <p>Joined: February 2022</p>
+          <h2>Luke Skybarker</h2>
         </div>
         <div className="profile-picture">
-          <img src="./dogcritic.jpeg" className="pro-pic"></img>
-       
+          <img src={dogcritic} className="pro-pic"></img>
+          <p>Joined: February 2022</p>
         </div>
         
         <div className="profile-details">
@@ -49,8 +49,8 @@ function ProfileContainer({ comments, handleDeleteComment }) {
         </div>
       </div>
       <div className="content-container">
+      <h4 className="movie-header">Comment History</h4>
         <div className="comments-container">
-          <h1 className="movie-header">Comment History</h1>
           {commentList}
           </div>
       </div>

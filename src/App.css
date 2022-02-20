@@ -17,7 +17,7 @@
 .body-container {
   padding: 25px 50px;
   background-color: #353941;
-  background-image: url("./components/pattern.jpg");
+  background-image: url("./components/MainContainer/images/pattern.jpg");
   background-repeat: repeat;
   min-height: calc(100vh - 40px);
 }
@@ -197,6 +197,12 @@
 .movie-genre {
   color: #ffd717;
   font-size: 2rem;
+  margin: 10px 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.movie-genre:hover {
+  transform: scale(1.1);
 }
 
 .comment-container {
@@ -243,15 +249,24 @@
 .movie-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-content: center;
   width: 100%;
   max-width: 1000px;
 }
 
+.review-feed-container {
+  display: flex;
+  justify-content: center;
+}
+
 .review-img {
-  width: 150px;
   border-radius: 15px;
-  margin: 10px;
+  margin: 20px;
+  width: 100%;
+}
+
+.review-img-container {
+  max-width: 150px;
 }
 
 .profile {
@@ -261,9 +276,12 @@
 
 .movie-card {
   display: flex;
+  justify-content: space-between;
   margin: 15px;
   border-radius: 15px;
   min-height: 150px;
+  min-width: 700px;
+  max-width: 800px;
 }
 
 .review-info-container {
@@ -272,13 +290,15 @@
   justify-content: center;
   margin: 10px;
   text-align: center;
-  background-color: rgba(211, 211, 211, 0.1);
+  background-color: rgba(53, 57, 65, 0.6);
+  border: 1px solid black;
   border-radius: 25px;
-  width: 300px;
+  width: 400px;
+  padding: 25px;
 }
 
 .review-info-element {
-  margin-bottom: 5px;
+  margin: 5px;
 }
 
 .search-form {
@@ -363,7 +383,7 @@ li {
 
 .comments-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
 }
 
@@ -501,4 +521,17 @@ li {
 textarea {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1rem;
+}
+
+.title-search {
+  margin-left: 45px;
+  max-width: 180px;
+}
+
+.genres-search-container {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-content: flex-end;
 }

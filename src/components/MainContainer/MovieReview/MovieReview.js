@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {motion} from "framer-motion"
 
 function MovieReview({
   handleUpdateComments,
@@ -38,7 +39,9 @@ function MovieReview({
 
   return (
     <div className="comment-container">
-      <form onSubmit={handleSubmitReview} className="comment-form">
+      <motion.form onSubmit={handleSubmitReview} className="comment-form"   initial={{ y: -60 }}
+        animate={{ y: -15 }}
+        transition={{ type: "spring", stiffness: 250 }}>
         <h3 className="comment-element">Review Form</h3>
         <lable className="comment-element">Title:</lable>
         <input
@@ -59,7 +62,7 @@ function MovieReview({
           placeholder="Let us know how you felt!"
         ></textarea>
         <button className="btn-style">Submit!</button>
-      </form>
+      </motion.form>
       {/* <p>{reviewFormInput}</p> */}
     </div>
   );
