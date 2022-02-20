@@ -15,7 +15,7 @@ function ProfileContainer({ comments, handleDeleteComment }) {
   return (
     <div className="profile-container">
       <div className="profile-information">
-        {/* User Information */}
+     
         <div className="profile-details">
           <h2>Luke Skybarker</h2>
         </div>
@@ -25,8 +25,9 @@ function ProfileContainer({ comments, handleDeleteComment }) {
         </div>
         
         <div className="profile-details">
-          <h3>About Me</h3>
-          <p>
+          <div>
+          <h4 className="profile-element">About Me</h4>
+          <p className="profile-about">
             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
             commodo ligula eget dolor. Aenean massa. Cum sociis natoque
             penatibus et magnis dis parturient montes, nascetur ridiculus mus.
@@ -36,8 +37,9 @@ function ProfileContainer({ comments, handleDeleteComment }) {
             imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede
             mollis pretium. Integer tincidunt. Cras dapibus.
           </p>
+          </div>
           <div className="favorites-container">
-          <h4>My Top Five Movies</h4>
+          <h4 className="profile-element">My Top Five Movies</h4>
           <li>
             <ul>Shrek</ul>
             <ul>Inception</ul>
