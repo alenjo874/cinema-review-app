@@ -12,6 +12,8 @@ function MoviesContainer({
   comments,
   handleDeleteComment,
 }) {
+
+
   const movieSelection = moviesArray.filter((movie) => movie.id === movieId);
 
   const displayMovieCard = movieSelection.map((movie) => {
@@ -32,11 +34,24 @@ function MoviesContainer({
     );
   });
 
+
+  let firstMovie = []
+
+  firstMovie.push(moviesArray[0])
+
+ const firstMovieCard = firstMovie.map(movie => {
+   return (
+    <MovieCard key={uuidv4()} {...movie} />
+   )
+ })
+
+
+  
+
   return (
     <div className="movie-container">
       <div className="movie-header">
-        <h2>Movie Review Selection</h2>
-        <p className="movie-genre"> {movieTitle}</p>
+        <p className="movie-genre"> { movieTitle }</p>
       </div>
       <div className="card-review-container">
         <div className="card-container"> {displayMovieCard}</div>

@@ -55,12 +55,16 @@ function MainContainer({
 
   return (
     <main className="main">
-      {/* <main className="main"> */}
+      <div className="movie-review-header">
+        <h2 >Movie Review Selection</h2>
+      </div>
+      <div className="main-review-container">
       <GenresContainer
         genresArray={genresArray}
         onClickDisplayMovies={onClickDisplayMovies}
         handleSearchDisplay={handleSearchDisplay}
         moviesArray={moviesArray}
+     
       />
       <MoviesContainer
         movieTitle={movieTitle}
@@ -68,6 +72,7 @@ function MainContainer({
         moviesArray={moviesArray}
         comments={comments}
         handleDeleteComment={handleDeleteComment}
+        isGenreClicked={isGenreClicked}
   
       />
       <MovieReview
@@ -76,6 +81,7 @@ function MainContainer({
         movieId={movieId}
         handleUpdateComments={handleUpdateComments}
       />
+      </div>
     </main>
   );
 }

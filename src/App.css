@@ -83,7 +83,7 @@ html {
   align-content: center;
   justify-content: center;
   margin: 30px 0px 15px 0px;
-  min-width: 300px;
+  width: 300px;
 }
 
 .movie-form {
@@ -188,13 +188,21 @@ html {
 .main {
   margin: 10px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  /* width: 100%; */
+}
+
+.main-review-container {
+  display: flex;
+}
+
+.movie-review-header {
+  font-size: 3rem;
+  padding-bottom: 25px;
+  text-align: center;
 }
 
 .movie-header {
-  font-size: 3rem;
-  padding-bottom: 25px;
   text-align: center;
 }
 
@@ -202,6 +210,7 @@ html {
   color: #ffd717;
   font-size: 2rem;
   margin: 10px 0;
+  margin: 60px 0 0 10px;
   transition: all 0.2s ease-in-out;
 }
 
@@ -217,8 +226,9 @@ html {
   padding: 25px 75px 0px 0px;
   max-width: 300px;
   max-height: 400px;
-  position: sticky;
+  /* position: sticky; */
   top: 0;
+  margin: 0 15px 0 0;
 }
 
 .comment-element {
@@ -288,7 +298,6 @@ html {
   margin: 15px;
   border-radius: 15px;
   min-height: 150px;
-  /* min-width: 700px; */
   max-width: 800px;
 }
 
@@ -384,7 +393,7 @@ li {
 
 .pro-pic {
   margin: 25px;
-  border-radius: 100px;
+  border-radius: 130px;
 }
 
 .content-container {
@@ -396,8 +405,6 @@ li {
   width: 75%;
   height: 200px;
 }
-
-
 
 .comments-container {
   display: flex;
@@ -533,7 +540,6 @@ li {
   margin: 25px;
   transition: all 0.3s ease-in-out;
   width: 180px;
-  border: 2px solid red;
 }
 
 textarea {
@@ -542,7 +548,7 @@ textarea {
 }
 
 .title-search {
-  margin-left: 45px;
+  margin: 0 0 0 45px;
   max-width: 180px;
 }
 
@@ -663,4 +669,8 @@ textarea {
     width: auto;
   }
 
+  .genres-container {
+    overflow: scroll;
+    height: 300px;
+  }
 }

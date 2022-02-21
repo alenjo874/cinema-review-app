@@ -9,11 +9,13 @@ function GenresContainer({
   moviesArray,
 }) {
 
+ 
   const [titleSearch, setTitleSearch] = useState("")
 
   function handleSearch(e) {
     setTitleSearch(e.target.value);
   }
+
 
   const movieTitleArray = moviesArray.filter(movie => {
     return (

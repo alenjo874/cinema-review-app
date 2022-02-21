@@ -32,6 +32,9 @@ function MovieReview({
       },
       body: JSON.stringify(newComment),
     });
+
+    setReviewTitleInput("")
+    setReviewFormInput("")
   }
 
   // const filteredMovieObj = moviesArray.filter(movie => movie.title.toLowerCase() === reviewTitleInput.toLowerCase())
