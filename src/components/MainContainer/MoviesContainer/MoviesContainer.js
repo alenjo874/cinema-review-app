@@ -51,6 +51,7 @@ function MoviesContainer({
   return (
     <div className="movie-container">
       <div className="movie-header">
+
         <p className="movie-genre"> { movieTitle }</p>
       </div>
       <div className="card-review-container">
