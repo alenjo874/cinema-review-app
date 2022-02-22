@@ -4,7 +4,6 @@ import Genres from "./Genres";
 import { motion } from "framer-motion";
 
 function GenresContainer({
-  onClickDisplayMovies,
   handleSearchDisplay,
   moviesArray,
 }) {
@@ -29,7 +28,6 @@ function GenresContainer({
       movieId={movie.id}
       key={uuidv4()}
       handleSearchDisplay={handleSearchDisplay}
-      onClickDisplayMovies={onClickDisplayMovies}
     />
   ));
 

@@ -1,17 +1,17 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
-import NavBar from "./components/NavBar.js";
-import Footer from "./components/FooterContainer/Footer"
+import NavBar from "./components/Header/NavBar.js";
+import Footer from "./components/FooterContainer/Footer";
 import ProfileContainer from "./components/MainContainer/ProfileContainer";
-import { Routes, Route, Link, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import MainContainer from "./components/MainContainer/MainContainer";
-import HomeContainer from "./components/HomeContainer";
+import HomeContainer from "./components/HomeContainer/HomeContainer";
 
 function App() {
   const [comments, setComments] = useState([]);
-  const [homeMovieId, setHomeMovieId] = useState("");
   const [newMovieObj, setNewMovieObj] = useState({});
   const [moviesArray, setMoviesArray] = useState([]);
+  
   useEffect(() => {
     fetch("http://localhost:3000/movies")
       .then((resp) => resp.json())
@@ -25,10 +25,8 @@ function App() {
   }, []);
 
   function handleDeleteComment(id) {
-    //Update State
     const filteredComments = comments.filter((comment) => comment.id !== id);
     setComments(filteredComments);
-    //Update DB
     fetch(`http://localhost:3000/comments/${id}`, {
       method: "DELETE",
     });

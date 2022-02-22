@@ -1,29 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 
-function HomeCard({ id, posterUrl, title, director, actor, year, genres }) {
-  const [showMore, setShowMore] = useState(false);
-  const [plotDisplay, setPlotDisplay] = useState(true);
-
-  function displayShowMore() {
-    setShowMore(true);
-  }
-
-  function hideShowMore() {
-    setShowMore(false);
-    setPlotDisplay(false);
-  }
-
-  function handlePlot() {
-    setPlotDisplay((prev) => !prev);
-  }
-
+function HomeCard({ posterUrl, title, director, actor, year, genres }) {
   function handleImageError(event) {
     event.target.style.display = "none";
-    setPlotDisplay(false);
   }
-
-  // const genreString = genres.join(" ");
 
   const imgOverlay = (
     <motion.div
@@ -58,7 +39,7 @@ function HomeCard({ id, posterUrl, title, director, actor, year, genres }) {
     </motion.div>
   );
 
-  return <div>{plotDisplay ? imgOverlay : null}</div>;
+  return <div>{imgOverlay}</div>;
 }
 
 export default HomeCard;

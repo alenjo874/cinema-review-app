@@ -1,13 +1,7 @@
 import React, { useState } from "react";
-import {motion} from "framer-motion"
+import { motion } from "framer-motion";
 
-function MovieReview({
-  handleUpdateComments,
-  moviesArray,
-  movieId,
-  comments,
-  handleDeleteComment,
-}) {
+function MovieReview({ handleUpdateComments, moviesArray }) {
   const [reviewTitleInput, setReviewTitleInput] = useState("");
   const [reviewFormInput, setReviewFormInput] = useState("");
 
@@ -17,14 +11,12 @@ function MovieReview({
       (movie) => movie.title.toLowerCase() === reviewTitleInput.toLowerCase()
     );
 
-    // Update State
     const newComment = {
       comment: reviewFormInput,
       movieTitle: filteredMovieObj[0]["title"],
       movieId: filteredMovieObj[0]["id"],
     };
     handleUpdateComments(newComment);
-    // Update Database
     fetch("http://localhost:3000/comments", {
       method: "POST",
       headers: {
@@ -33,18 +25,19 @@ function MovieReview({
       body: JSON.stringify(newComment),
     });
 
-    setReviewTitleInput("")
-    setReviewFormInput("")
+    setReviewTitleInput("");
+    setReviewFormInput("");
   }
-
-  // const filteredMovieObj = moviesArray.filter(movie => movie.title.toLowerCase() === reviewTitleInput.toLowerCase())
-  // console.log(filteredMovieObj)
 
   return (
     <div className="comment-container">
-      <motion.form onSubmit={handleSubmitReview} className="comment-form"   initial={{ y: -60 }}
+      <motion.form
+        onSubmit={handleSubmitReview}
+        className="comment-form"
+        initial={{ y: -60 }}
         animate={{ y: -15 }}
-        transition={{ type: "spring", stiffness: 250 }}>
+        transition={{ type: "spring", stiffness: 250 }}
+      >
         <h3 className="comment-element">Review Form</h3>
         <lable className="comment-element">Title:</lable>
         <input
@@ -66,7 +59,6 @@ function MovieReview({
         ></textarea>
         <button className="btn-style">Submit!</button>
       </motion.form>
-      {/* <p>{reviewFormInput}</p> */}
     </div>
   );
 }

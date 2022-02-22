@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-function Genres({ title, movieId, onClickDisplayMovies, handleSearchDisplay }) {
+function Genres({ title, movieId, handleSearchDisplay }) {
   function handleClick() {
     handleSearchDisplay(title, movieId);
   }
@@ -10,15 +10,13 @@ function Genres({ title, movieId, onClickDisplayMovies, handleSearchDisplay }) {
     <div>
       <motion.ul
         whileHover={{
-          scale: 1.25,
+          scale: 1.15,
           originX: 0,
           transition: { duration: 0.3 },
-          color: "white",
         }}
         whileTap={{
-          scale: 0.9,
+          scale: 0.95,
           transition: { duration: 0.3 },
-          color: "darkgray",
         }}
         transition={{ type: "spring", stiffness: 275 }}
         className="genre-element"

@@ -334,6 +334,14 @@ li {
   padding: 0 35px;
 }
 
+.genre-element:hover {
+  color: white;
+}
+
+.genre-element:active {
+  color: lightgray;
+}
+
 .albumsContainer {
   display: flex;
   flex-wrap: wrap;
@@ -565,7 +573,7 @@ textarea {
   height: 800px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 850px) {
   .navbar-container {
     height: auto;
     display: flex;

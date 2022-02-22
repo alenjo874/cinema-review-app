@@ -5,15 +5,17 @@ import { motion } from "framer-motion";
 import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
 
-function HomeContainer({
-  handleHomeClick,
-  setNewMovieObj,
-  setMoviesArray,
-  moviesArray,
-}) {
-  const [homeMoviesArray, setHomeMoviesArray] = useState([]);
+function HomeContainer({ setNewMovieObj, setMoviesArray, moviesArray }) {
   const [search, setSearch] = useState("");
   const [isAddClicked, setIsAddClicked] = useState(false);
+  const [title, setTitle] = useState("");
+  const [year, setYear] = useState("");
+  const [runtime, setRuntime] = useState("");
+  const [genres, setGenres] = useState([]);
+  const [director, setDirector] = useState("");
+  const [actors, setActors] = useState("");
+  const [plot, setPlot] = useState("");
+  const [posterUrl, setPosterUrl] = useState("");
 
   const filterTitles = moviesArray.filter((movie) => {
     return (
@@ -32,15 +34,6 @@ function HomeContainer({
     setSearch(e.target.value);
   }
 
-  const [title, setTitle] = useState("");
-  const [year, setYear] = useState("");
-  const [runtime, setRuntime] = useState("");
-  const [genres, setGenres] = useState([]);
-  const [director, setDirector] = useState("");
-  const [actors, setActors] = useState("");
-  const [plot, setPlot] = useState("");
-  const [posterUrl, setPosterUrl] = useState("");
-
   const newMovieForm = (
     <motion.form
       className="movie-form-container"
@@ -50,25 +43,25 @@ function HomeContainer({
       onSubmit={handleNewMovie}
     >
       <div className="movie-form">
-        <label>Movie Title</label>
+        <p>Movie Title</p>
         <input
           className="search addmovie"
           onChange={(e) => setTitle(e.target.value)}
           value={title}
         ></input>
-        <label>Year</label>
+        <p>Year</p>
         <input
           className="search addmovie"
           onChange={(e) => setYear(e.target.value)}
           value={year}
         ></input>
-        <label>Runtime</label>
+        <p>Runtime</p>
         <input
           className="search addmovie"
           onChange={(e) => setRuntime(e.target.value)}
           value={runtime}
         ></input>
-        <label>Genres</label>
+        <p>Genres</p>
         <input
           className="search addmovie"
           onChange={(e) => setGenres(e.target.value)}
@@ -76,25 +69,25 @@ function HomeContainer({
         ></input>
       </div>
       <div className="movie-form">
-        <label>Director</label>
+        <p>Director</p>
         <input
           className="search addmovie"
           onChange={(e) => setDirector(e.target.value)}
           value={director}
         ></input>
-        <label>Actors</label>
+        <p>Actors</p>
         <input
           className="search addmovie"
           onChange={(e) => setActors(e.target.value)}
           value={actors}
         ></input>
-        <label>Plot</label>
+        <p>Plot</p>
         <input
           className="search addmovie"
           onChange={(e) => setPlot(e.target.value)}
           value={plot}
         ></input>
-        <label>Movie Poster</label>
+        <p>Movie Poster</p>
         <input
           className="search addmovie"
           onChange={(e) => setPosterUrl(e.target.value)}
@@ -141,7 +134,7 @@ function HomeContainer({
     setNewMovieObj(movieObj);
 
     fetch("http://localhost:3000/movies", {
-      method: "POST", // or 'PUT'
+      method: "POST",
       headers: {
         "Content-Type": "application/json",
       },

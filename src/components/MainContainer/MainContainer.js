@@ -7,46 +7,14 @@ function MainContainer({
   comments,
   setComments,
   handleDeleteComment,
-  moviesArray
-  
-
+  moviesArray,
 }) {
-  const [genresArray, setGenresArray] = useState([]);
-  const [genre, setGenre] = useState("");
-
-  const [searchDisplay, setSearchDisplay] = useState(false);
-
-  const [isGenreClicked, setIsGenreClicked] = useState(false);
-
-  // const [movieReviewForm, setMovieReviewForm] = useState(true);
   const [movieId, setMovieId] = useState("");
   const [movieTitle, setMovieTitle] = useState("");
 
-
-  useEffect(() => {
-    fetch("http://localhost:3000/genres")
-      .then((resp) => resp.json())
-      .then(setGenresArray);
-  }, []);
-
-
-  function onClickDisplayMovies(specificGenre) {
-    setGenre(specificGenre);
-    setIsGenreClicked(true);
-  }
-
-  const filteredMovies = moviesArray.filter((movie) =>
-    movie.genres.includes(genre)
-  );
-
   function handleSearchDisplay(title, movieId) {
-    setSearchDisplay(true);
     setMovieTitle(title);
     setMovieId(movieId);
-  }
-
-  function handleInfoDisplay(id) {
-    setMovieId(id);
   }
 
   function handleUpdateComments(newComment) {
@@ -56,31 +24,24 @@ function MainContainer({
   return (
     <main className="main">
       <div className="movie-review-header">
-        <h2 >Movie Review Selection</h2>
+        <h2>Movie Review Selection</h2>
       </div>
       <div className="main-review-container">
-      <GenresContainer
-        genresArray={genresArray}
-        onClickDisplayMovies={onClickDisplayMovies}
-        handleSearchDisplay={handleSearchDisplay}
-        moviesArray={moviesArray}
-     
-      />
-      <MoviesContainer
-        movieTitle={movieTitle}
-        movieId={movieId}
-        moviesArray={moviesArray}
-        comments={comments}
-        handleDeleteComment={handleDeleteComment}
-        isGenreClicked={isGenreClicked}
-  
-      />
-      <MovieReview
-        moviesArray={moviesArray}
-        comments={comments}
-        movieId={movieId}
-        handleUpdateComments={handleUpdateComments}
-      />
+        <GenresContainer
+          handleSearchDisplay={handleSearchDisplay}
+          moviesArray={moviesArray}
+        />
+        <MoviesContainer
+          movieTitle={movieTitle}
+          movieId={movieId}
+          moviesArray={moviesArray}
+          comments={comments}
+          handleDeleteComment={handleDeleteComment}
+        />
+        <MovieReview
+          moviesArray={moviesArray}
+          handleUpdateComments={handleUpdateComments}
+        />
       </div>
     </main>
   );
