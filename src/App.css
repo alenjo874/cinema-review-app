@@ -33,17 +33,18 @@ html {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 30px;
+
 }
 
 .app-name {
   font-weight: 800;
   font-size: 1.25rem;
-  margin-left: 110px;
+  margin-left: 30px;
   background-color: #26282b;
 }
 
 .name-element {
-  color: #ffffff;
+  color: #ffffff
 }
 
 .navbar {
