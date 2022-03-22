@@ -105,9 +105,9 @@ function HomeContainer({ setNewMovieObj, setMoviesArray, moviesArray }) {
   const movieCardDisplay = (
     <motion.div
       className="home-movie-container"
-      initial={{ y: -40 }}
-      animate={{ y: -15 }}
-      transition={{ type: "spring", stiffness: 250 }}
+      // initial={{ y: -40 }}
+      // animate={{ y: -15 }}
+      // transition={{ type: "spring", stiffness: 250 }}
     >
       {displayTitles}
     </motion.div>

@@ -18,10 +18,10 @@ function HomeCard({ posterUrl, title, director, actor, year, genres }) {
       }}
       className="image"
       id="postimage"
-      initial={{ y: -50, opacity: 0 }}
-      animate={{ y: -10, opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ type: "spring", stiffness: 200 }}
+      initial={{ y: -15, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      // exit={{ opacity: 0 }}
+      // transition={{ type: "spring", stiffness: 200 }}
     >
       <img
         onError={handleImageError}
