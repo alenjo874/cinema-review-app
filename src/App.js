@@ -13,7 +13,7 @@ function App() {
   const [moviesArray, setMoviesArray] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/movies")
+    fetch("https://json-server-cinema-reviews.herokuapp.com/movies")
       .then((resp) => resp.json())
       .then(setMoviesArray);
   }, []);
