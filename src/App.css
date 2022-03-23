@@ -81,6 +81,8 @@ html {
   margin: 15px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .movie-form-details {
@@ -234,7 +236,7 @@ html {
 
 .btn-style {
   display: inline-block;
-  padding: 0.46em 1.6em;
+  /* padding: 0.46em 1.6em; */
   border: 0.1em solid #000000;
   border-radius: 15px;
   box-sizing: border-box;
@@ -310,7 +312,7 @@ html {
   background-color: rgba(53, 57, 65, 0.6);
   border: 1px solid black;
   border-radius: 25px;
-  width: 400px;
+  width: 50%;
   padding: 25px;
 }
 
@@ -584,8 +586,23 @@ textarea {
 }
 
 .genres-container {
-  overflow: scroll;
+  margin-top: 20px;
+  overflow-y: scroll;
+  overflow-x: hidden;
   height: 800px;
+}
+
+div::-webkit-scrollbar {
+  width: 12px; /* width of the entire scrollbar */
+}
+
+div::-webkit-scrollbar-track {
+  background: #353941; /* color of the tracking area */
+}
+
+div::-webkit-scrollbar-thumb {
+  background-color: #fff; /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
 }
 
 @media only screen and (max-width: 1200px) {
@@ -611,14 +628,14 @@ textarea {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    overflow: scroll;
-    height: 300px;
+    overflow-y: scroll;
+    max-height: 300px;
   }
 
   .genres-search-container {
     justify-content: center;
     align-items: center;
-    order: 2;
+    order: 0;
   }
 
   .comment-form {
@@ -648,8 +665,9 @@ textarea {
 
   .genres-container {
     text-align: center;
-    overflow: scroll;
+    overflow-y: scroll;
     height: 300px;
+    width: 100%;
     margin-bottom: 50px;
   }
 }
