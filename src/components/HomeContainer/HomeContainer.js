@@ -42,62 +42,65 @@ function HomeContainer({ setNewMovieObj, setMoviesArray, moviesArray }) {
       transition={{ type: "spring", stiffness: 250 }}
       onSubmit={handleNewMovie}
     >
-      <div className="movie-form">
-        <p>Movie Title</p>
-        <input
-          className="search addmovie"
-          onChange={(e) => setTitle(e.target.value)}
-          value={title}
-        ></input>
-        <p>Year</p>
-        <input
-          className="search addmovie"
-          onChange={(e) => setYear(e.target.value)}
-          value={year}
-        ></input>
-        <p>Runtime</p>
-        <input
-          className="search addmovie"
-          onChange={(e) => setRuntime(e.target.value)}
-          value={runtime}
-        ></input>
-        <p>Genres</p>
-        <input
-          className="search addmovie"
-          onChange={(e) => setGenres(e.target.value)}
-          value={genres}
-        ></input>
-      </div>
-      <div className="movie-form">
-        <p>Director</p>
-        <input
-          className="search addmovie"
-          onChange={(e) => setDirector(e.target.value)}
-          value={director}
-        ></input>
-        <p>Actors</p>
-        <input
-          className="search addmovie"
-          onChange={(e) => setActors(e.target.value)}
-          value={actors}
-        ></input>
-        <p>Plot</p>
-        <input
-          className="search addmovie"
-          onChange={(e) => setPlot(e.target.value)}
-          value={plot}
-        ></input>
-        <p>Movie Poster</p>
-        <input
-          className="search addmovie"
-          onChange={(e) => setPosterUrl(e.target.value)}
-          value={posterUrl}
-        ></input>
-        <div>
-          <button className="btn-style" type="submit">
-            +New Movie
-          </button>
+      <div className="movie-form-details">
+        <div className="movie-form">
+          <p>Movie Title</p>
+          <input
+            className="search addmovie"
+            onChange={(e) => setTitle(e.target.value)}
+            value={title}
+          ></input>
+          <p>Year</p>
+          <input
+            className="search addmovie"
+            onChange={(e) => setYear(e.target.value)}
+            value={year}
+          ></input>
+          <p>Runtime</p>
+          <input
+            className="search addmovie"
+            onChange={(e) => setRuntime(e.target.value)}
+            value={runtime}
+          ></input>
+          <p>Genres</p>
+          <input
+            className="search addmovie"
+            onChange={(e) => setGenres(e.target.value)}
+            value={genres}
+          ></input>
         </div>
+        <div className="movie-form">
+          <p>Director</p>
+          <input
+            className="search addmovie"
+            onChange={(e) => setDirector(e.target.value)}
+            value={director}
+          ></input>
+          <p>Actors</p>
+          <input
+            className="search addmovie"
+            onChange={(e) => setActors(e.target.value)}
+            value={actors}
+          ></input>
+          <p>Plot</p>
+          <input
+            className="search addmovie"
+            onChange={(e) => setPlot(e.target.value)}
+            value={plot}
+          ></input>
+          <p>Movie Poster</p>
+          <input
+            className="search addmovie"
+            onChange={(e) => setPosterUrl(e.target.value)}
+            value={posterUrl}
+          ></input>
+        </div>
+      </div>
+
+      <div>
+        <button className="btn-style" type="submit">
+          +New Movie
+        </button>
       </div>
     </motion.form>
   );

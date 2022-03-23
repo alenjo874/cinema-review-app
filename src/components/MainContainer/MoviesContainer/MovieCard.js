@@ -16,12 +16,19 @@ function MovieCard({
       </div>
       <div className="review-info-container">
         <p className="review-info-element">
-          {genres.join(" ")} {year}
+          {genres.join(" ")} | {year} | {runtime} minutes
         </p>
-        <p className="review-info-element">Director: {director}</p>
-        <p className="review-info-element">Actors: {actors}</p>
-        <p className="review-info-element">Runtime: {runtime} minutes</p>
-        <p className="review-info-element">{plot}</p>
+        <p className="review-info-element">
+          <b>Director:</b> {director}
+        </p>
+        <p className="review-info-element">
+          <b>Actors: </b>
+          {actors}
+        </p>
+
+        <p className="review-info-element">
+          <em>{plot}</em>
+        </p>
       </div>
     </div>
   );
