@@ -17,7 +17,7 @@ function MovieReview({ handleUpdateComments, moviesArray }) {
       movieId: filteredMovieObj[0]["id"],
     };
     handleUpdateComments(newComment);
-    fetch("http://localhost:3000/comments", {
+    fetch("https://json-server-cinema-reviews.herokuapp.com/comments", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

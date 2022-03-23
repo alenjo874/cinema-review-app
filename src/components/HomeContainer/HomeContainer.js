@@ -133,7 +133,7 @@ function HomeContainer({ setNewMovieObj, setMoviesArray, moviesArray }) {
 
     setNewMovieObj(movieObj);
 
-    fetch("http://localhost:3000/movies", {
+    fetch("https://json-server-cinema-reviews.herokuapp.com/movies", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

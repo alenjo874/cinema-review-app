@@ -19,7 +19,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:3000/comments")
+    fetch("https://json-server-cinema-reviews.herokuapp.com/comments")
       .then((resp) => resp.json())
       .then(setComments);
   }, []);
@@ -27,7 +27,7 @@ function App() {
   function handleDeleteComment(id) {
     const filteredComments = comments.filter((comment) => comment.id !== id);
     setComments(filteredComments);
-    fetch(`http://localhost:3000/comments/${id}`, {
+    fetch(`https://json-server-cinema-reviews.herokuapp.com/comments/${id}`, {
       method: "DELETE",
     });
   }
