@@ -1,7 +1,7 @@
 import React from "react";
-import CommentCard from "../Comments/CommentCard";
+import CommentCard from "../Comments/CommentCard.js";
 import { v4 as uuidv4 } from "uuid";
-import dogcritic from "../MainContainer/images/dogcritic.jpeg";
+// import dogcritic from "/images/dogcritic.jpeg";
 
 function ProfileContainer({ comments, handleDeleteComment }) {
   const commentList = comments.map((comment) => (
@@ -19,7 +19,7 @@ function ProfileContainer({ comments, handleDeleteComment }) {
           <h2>Luke Skybarker</h2>
         </div>
         <div className="profile-picture">
-          <img src={dogcritic} className="pro-pic"></img>
+          {/* <img src="/images/dogcritic.jpeg" className="pro-pic"></img> */}
           <p>Joined: February 2022</p>
         </div>
 
