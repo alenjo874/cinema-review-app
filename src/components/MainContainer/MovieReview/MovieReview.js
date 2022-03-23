@@ -39,7 +39,7 @@ function MovieReview({ handleUpdateComments, moviesArray }) {
         transition={{ type: "spring", stiffness: 250 }}
       >
         <h3 className="comment-element">Review Form</h3>
-        <lable className="comment-element">Title:</lable>
+        <label className="comment-element">Title:</label>
         <input
           className="search comment-element"
           type="text"
@@ -47,7 +47,7 @@ function MovieReview({ handleUpdateComments, moviesArray }) {
           onChange={(e) => setReviewTitleInput(e.target.value)}
           placeholder="Movie Title"
         ></input>
-        <lable className="comment-element">Review:</lable>
+        <label className="comment-element">Review:</label>
         <textarea
           className="review-input comment-element"
           type="text"
