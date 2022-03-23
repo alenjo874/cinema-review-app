@@ -1,5 +1,5 @@
 import React from "react";
-// import dogcritic from "../MainContainer/images/dogcritic.jpeg";
+import dogcritic from "../../images/dogcritic.jpeg";
 
 function CommentCard({ id, comment, movieTitle, handleDeleteComment }) {
   function handleDelete() {
@@ -10,7 +10,7 @@ function CommentCard({ id, comment, movieTitle, handleDeleteComment }) {
     <div className="comment-card">
       <div className="profile-comment">
         <div className="profile-pic-container">
-          {/* <img src={dogcritic} className="pro-pic2 emoji"></img> */}
+          <img src={dogcritic} className="pro-pic2 emoji"></img>
         </div>
         <div>
           <div className="comment-tophalf">

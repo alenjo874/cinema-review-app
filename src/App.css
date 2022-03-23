@@ -16,13 +16,13 @@
 
 .body-container {
   background-color: #353941;
-  background-image: url("./components/MainContainer/images/pattern.jpg");
+  background-image: url("./images/pattern.jpg");
   background-repeat: repeat;
   width: 100%;
 }
 
 html {
-  background-image: url("./components/MainContainer/images/pattern.jpg");
+  background-image: url("./images/pattern.jpg");
   background-repeat: repeat;
 }
 
