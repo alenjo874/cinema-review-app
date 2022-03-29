@@ -1,5 +1,7 @@
 # Cinema Reviews website
 
+https://idyllic-cascaron-c027ed.netlify.app/
+
 This project was built for movie lovers, who want to come together and talk about all things movies!
 
 To start the project please run these commands
